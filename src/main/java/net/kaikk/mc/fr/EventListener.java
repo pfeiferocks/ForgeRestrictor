@@ -55,7 +55,7 @@ class EventListener implements Listener {
 		}
 		
 		// ignore click on signs and chests, used by multiple plugins (like shop plugins)
-		if (block!=null && event.getAction()==Action.LEFT_CLICK_BLOCK && event.getClickedBlock().getType()==Material.SIGN) { 
+		if (block!=null && (event.getAction()==Action.LEFT_CLICK_BLOCK || event.getAction()==Action.RIGHT_CLICK_BLOCK) && (event.getClickedBlock().getType()==Material.WALL_SIGN || event.getClickedBlock().getType()==Material.SIGN || event.getClickedBlock().getType()==Material.SIGN_POST)) {
 			return;
 		}
 
